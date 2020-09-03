@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".ui.fragment.InfoFragment">
+
+    <com.google.android.material.textview.MaterialTextView
+      android:id="@+id/start_location"
+      style="@style/FreightPad.Info.Location.TextAppearance"
+      android:layout_width="@dimen/f_info_location_width"
+      android:layout_height="@dimen/f_info_location_height"
+      android:layout_marginTop="16dp"
+      android:layout_marginEnd="16dp"
+      android:layout_marginStart="16dp"
+      android:ellipsize="end"
+      android:hint="@string/f_info_location_from"
+      android:maxLines="1"
+      android:background="@drawable/location_start_background"
+      app:drawableStartCompat="@drawable/dot"
+      app:drawableTint="@android:color/holo_green_light"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:text="Sua localização" />
+
+    <com.google.android.material.textview.MaterialTextView
+      android:id="@+id/destination_location"
+      style="@style/FreightPad.Info.Location.TextAppearance"
+      android:layout_width="@dimen/f_info_location_width"
+      android:layout_height="@dimen/f_info_location_height"
+      android:layout_marginTop="@dimen/f_info_location_margin_top"
+      android:ellipsize="end"
+      android:hint="@string/f_info_location_to"
+      android:maxLines="1"
+      android:background="@drawable/location_destination_background"
+      app:drawableStartCompat="@drawable/dot"
+      app:drawableTint="@android:color/holo_orange_light"
+      app:layout_constraintEnd_toEndOf="@+id/start_location"
+      app:layout_constraintStart_toStartOf="@+id/start_location"
+      app:layout_constraintTop_toBottomOf="@+id/start_location"
+      tools:text="Localização final" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+      android:id="@+id/axis_decrement"
+      android:layout_width="@dimen/f_info_axis_button_width"
+      android:layout_height="@dimen/f_info_axis_button_height"
+      android:gravity="center"
+      android:src="@drawable/ic_minus"
+      android:tint="@android:color/holo_red_dark"
+      android:background="?selectableItemBackgroundBorderless"
+      app:layout_constraintBottom_toBottomOf="@+id/axis_display"
+      app:layout_constraintEnd_toStartOf="@+id/axis_display"
+      app:layout_constraintTop_toTopOf="@+id/axis_display" />
+
+    <com.google.android.material.textview.MaterialTextView
+      android:id="@+id/axis_display"
+      android:layout_width="@dimen/f_info_axis_display_size"
+      android:layout_height="@dimen/f_info_axis_display_size"
+      android:layout_marginTop="@dimen/f_info_details_margin_top"
+      android:fontFamily="sans-serif-medium"
+      android:gravity="center"
+      android:textSize="@dimen/f_info_axis_display_text_size"
+      app:layout_constraintEnd_toStartOf="@+id/axis_increment"
+      app:layout_constraintTop_toBottomOf="@+id/destination_location" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+      android:id="@+id/axis_increment"
+      android:layout_width="@dimen/f_info_axis_button_width"
+      android:layout_height="@dimen/f_info_axis_button_height"
+      android:gravity="center"
+      android:src="@drawable/ic_add"
+      android:tint="@android:color/holo_green_light"
+      android:background="?selectableItemBackgroundBorderless"
+      app:layout_constraintBottom_toBottomOf="@+id/axis_display"
+      app:layout_constraintEnd_toEndOf="@+id/start_location"
+      app:layout_constraintTop_toTopOf="@+id/axis_display" />
+
+    <com.google.android.material.textview.MaterialTextView
+      android:id="@+id/appCompatTextView3"
+      android:layout_width="@dimen/f_info_label_width"
+      android:layout_height="@dimen/f_info_label_height"
+      android:layout_marginEnd="@dimen/f_info_label_margin_end"
+      android:fontFamily="sans-serif-medium"
+      android:gravity="center_vertical"
+      android:maxLines="2"
+      android:textSize="@dimen/f_info_label_text_size"
+      android:text="@string/f_info_many_axis"
+      app:layout_constraintBottom_toBottomOf="@+id/axis_display"
+      app:layout_constraintEnd_toStartOf="@+id/axis_decrement"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="@+id/start_location"
+      app:layout_constraintTop_toTopOf="@+id/axis_display"
+      app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.textview.MaterialTextView
+      android:id="@+id/appCompatTextView4"
+      android:layout_width="@dimen/f_info_label_width"
+      android:layout_height="@dimen/f_info_label_height"
+      android:layout_marginEnd="@dimen/f_info_label_margin_end"
+      android:fontFamily="sans-serif-medium"
+      android:gravity="center_vertical"
+      android:lines="2"
+      android:textSize="@dimen/f_info_label_text_size"
+      android:text="@string/f_info_fuel_consume"
+      app:layout_constraintBottom_toBottomOf="@+id/fuel_consume"
+      app:layout_constraintEnd_toStartOf="@+id/fuel_consume"
+      app:layout_constraintStart_toStartOf="@+id/start_location"
+      app:layout_constraintTop_toTopOf="@+id/fuel_consume" />
+
+    <com.google.android.material.textview.MaterialTextView
+      android:id="@+id/materialTextView"
+      android:layout_width="@dimen/f_info_label_width"
+      android:layout_height="@dimen/f_info_label_height"
+      android:layout_marginEnd="@dimen/f_info_label_margin_end"
+      android:fontFamily="sans-serif-medium"
+      android:gravity="center_vertical"
+      android:textSize="@dimen/f_info_label_text_size"
+      android:text="@string/f_info_fuel_price"
+      app:layout_constraintBottom_toBottomOf="@+id/fuel_price"
+      app:layout_constraintEnd_toStartOf="@+id/fuel_price"
+      app:layout_constraintStart_toStartOf="@+id/start_location"
+      app:layout_constraintTop_toTopOf="@+id/fuel_price" />
+
+    <com.google.android.material.textfield.TextInputEditText
+      android:id="@+id/fuel_consume"
+      android:layout_width="wrap_content"
+      android:layout_height="@dimen/f_info_fuel_height"
+      android:layout_marginTop="@dimen/f_info_details_margin_top"
+      android:inputType="numberDecimal"
+      android:maxLength="5"
+      android:textSize="@dimen/f_info_fuel_text_size"
+      android:text="@string/f_info_fuel_consume_default"
+      android:background="@android:color/transparent"
+      app:layout_constraintEnd_toEndOf="@+id/start_location"
+      app:layout_constraintTop_toBottomOf="@+id/axis_display" />
+
+    <com.google.android.material.textfield.TextInputEditText
+      android:id="@+id/fuel_price"
+      android:layout_width="wrap_content"
+      android:layout_height="@dimen/f_info_fuel_height"
+      android:layout_marginTop="@dimen/f_info_details_margin_top"
+      android:inputType="numberDecimal"
+      android:maxLength="11"
+      android:textSize="@dimen/f_info_fuel_text_size"
+      android:text="@string/f_info_fuel_price_default"
+      android:background="@android:color/transparent"
+      app:layout_constraintEnd_toEndOf="@+id/start_location"
+      app:layout_constraintTop_toBottomOf="@+id/fuel_consume" />
+
+    <com.google.android.material.button.MaterialButton
+      android:id="@+id/calculate"
+      android:layout_width="@dimen/f_info_label_width"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="32dp"
+      android:text="@string/f_info_calculate"
+      app:layout_constraintEnd_toEndOf="@+id/start_location"
+      app:layout_constraintStart_toStartOf="@+id/start_location"
+      app:layout_constraintTop_toBottomOf="@+id/materialTextView" />
+
+    <com.google.android.material.textview.MaterialTextView
+      android:id="@+id/error_description"
+      android:layout_width="@dimen/f_info_error_width"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:padding="8dp"
+      android:gravity="center"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="@+id/calculate"
+      app:layout_constraintStart_toStartOf="@+id/calculate"
+      app:layout_constraintTop_toBottomOf="@+id/calculate"
+      app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/progress_bar"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/greyA300"
+      android:elevation="5dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="parent">
+
+      <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/loading_animation"
+        android:layout_width="@dimen/loading_size"
+        android:layout_height="@dimen/loading_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/truck_loading" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
